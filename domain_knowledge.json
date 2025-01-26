@@ -1,0 +1,34 @@
+{
+  "competitors": [
+    "CompetitorW", "CompetitorV", "CompetitorU", "CompetitorT", "CompetitorS",
+    "CompetitorR", "CompetitorQ", "CompetitorP", "CompetitorO", "CompetitorN",
+    "CompetitorM", "CompetitorL", "CompetitorK", "CompetitorJ", "CompetitorI",
+    "CompetitorH", "CompetitorG", "CompetitorF", "CompetitorE", "CompetitorD",
+    "CompetitorC", "CompetitorB", "CompetitorA", "CompetitorX", "CompetitorY",
+    "CompetitorZ", "CompetitorAa", "CompetitorAb", "CompetitorAc", "CompetitorAd",
+    "CompetitorAe", "CompetitorAf", "CompetitorAg", "CompetitorAh", "CompetitorAi",
+    "CompetitorAj", "CompetitorAk", "CompetitorAl", "CompetitorAm", "CompetitorAn",
+    "CompetitorAo", "CompetitorAp", "CompetitorAq", "CompetitorAr", "CompetitorAs",
+    "CompetitorAt", "CompetitorAu", "CompetitorAv", "CompetitorAw", "CompetitorAx",
+    "CompetitorAy", "CompetitorAz", "CompetitorBa", "CompetitorBb", "CompetitorBc",
+    "CompetitorBd", "CompetitorBe", "CompetitorBf", "CompetitorBg", "CompetitorBh",
+    "CompetitorBi", "CompetitorBj", "CompetitorBk", "CompetitorBl", "CompetitorBm",
+    "CompetitorBn", "CompetitorBo", "CompetitorBp", "CompetitorBq", "CompetitorBr",
+    "CompetitorBs", "CompetitorBt", "CompetitorBu", "CompetitorBv", "CompetitorBw"
+  ],
+  "features": [
+    "artificial intelligence", "business intelligence", "expert system", "knowledge graph",
+    "text analytics", "speech recognition", "natural language generation", "computer-aided design",
+    "predictive modeling", "customer relationship management", "recommendation engine",
+    "sentiment analysis", "data science platform", "network analytics", "image recognition",
+    "predictive analytics", "machine learning", "cloud computing", "natural language processing",
+    "computer vision", "reinforcement learning", "deep learning", "automated decision-making"
+  ],
+  "pricing_keywords": [
+    "promotional offer", "discounted rate", "long-term contract", "setup fee", "referral program",
+    "extended warranty", "priority support", "free consultation", "annual subscription",
+    "long-term commitment", "monthly subscription", "quarterly payment", "extended support",
+    "promotional rate", "free trial", "licensing fee", "subscription cost", "annual cost",
+    "monthly fee", "quarterly cost", "one-time payment"
+  ]
+}
