@@ -10,8 +10,14 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Download necessary NLTK data
+RUN python -m nltk.downloader wordnet stopwords
+
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# Add execute permissions to the start.sh script
+RUN chmod +x start.sh
+
+# Run the start.sh script when the container launches
+CMD ["./start.sh"]
