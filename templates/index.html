@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Snippet Labeling</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .sample-text {
+            color: #6c757d;
+            cursor: pointer;
+        }
+        .result-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .result-container h3 {
+            margin-bottom: 20px;
+        }
+        .result-container p, .result-container ul {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 text-center">Text Snippet Labeling</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form id="textForm" class="mt-4">
+                    <div class="form-group">
+                        <label for="text_snippet">Enter Text Snippet:</label>
+                        <textarea class="form-control" id="text_snippet" name="text_snippet" rows="4" placeholder="Enter your text snippet here..." required></textarea>
+                        <small class="form-text text-muted sample-text" id="sampleText">Sample Text: "Our company has been using AI for customer service, but I'm concerned about the cost of implementation. Can you provide more information about your pricing model and how it compares to CompetitorAh?"</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+                <div id="result" class="result-container mt-4" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#sampleText').on('click', function() {
+                $('#text_snippet').val($(this).text().replace('Sample Text: ', ''));
+            });
+
+            $('#textForm').on('submit', function(event) {
+                event.preventDefault();
+                $.ajax({
+                    url: '/predict',
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#result').html(`
+                            <h3>Result</h3>
+                            <p><strong>ID:</strong> ${response.id}</p>
+                            <p><strong>Text Snippet:</strong> ${response.text_snippet}</p>
+                            <p><strong>Entities:</strong></p>
+                            <ul>
+                                ${Object.keys(response.entities).map(category => `
+                                    <li><strong>${category}:</strong> ${response.entities[category].join(', ')}</li>
+                                `).join('')}
+                            </ul>
+                        `).show();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
